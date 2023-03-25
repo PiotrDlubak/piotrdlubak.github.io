@@ -56,6 +56,7 @@ footer {
   color:#c91d1d;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: left;
   text-decoration: none; 
   font-size: 28px;
@@ -76,7 +77,7 @@ li a{
 
 
 section{
-  text-align: justify;
+  text-align: left;
   margin-top: 100px;
   line-height: 1.5;
 }
@@ -103,7 +104,7 @@ section{
 }
 
 .schemat {
-  max-width: 100%;
+  max-width: 30%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -131,4 +132,22 @@ section{
 
 .linki ol li {
   margin-top: 10px;
+}
+
+.lista {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lista .kontakt {
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8em;
+  margin-top: 5px;
+  font-size: 10px;
 }
