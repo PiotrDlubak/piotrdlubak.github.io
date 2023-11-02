@@ -1,0 +1,185 @@
+/* Przykładowe style dla strony */
+body {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-decoration: none;
+    border-radius: 5%; /* Ustawiamy border-radius na 50%, co daje zaokrąglony kształt */
+
+}
+
+.main {
+    width: 80%; /* Ustal szerokość obszaru głównego */
+    margin: 0 auto; /* Wyśrodkowanie elementu na poziomie */
+    padding-bottom: px;
+    letter-spacing: 1px;
+}
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    background-color:rgb(117, 5, 57);
+    width: 100%;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Ustaw menu jako elastyczny kontener */
+    justify-content: center; /* Wyśrodkuj elementy menu */
+    justify-content: flex-end;
+}
+
+.menu ul li {
+    display: inline;
+    margin-right: 40px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #eadfdf;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color:rgb(182, 167, 231);
+    text-decoration: overline underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+}
+
+
+/* Stylizacja strony, aby uniknąć zakrywania treści przez przesuwające się menu */
+body {
+    padding-top: 100px; /* Dodaj górny margines dla treści, aby uniknąć zakrywania przez menu */
+    
+}
+
+
+
+
+
+.container {
+    display: flex;
+    margin: 100px;
+    gap: 80px;
+    line-height: 1.5; /* Zwiększa odstępy pomiędzy wierszami, wartość 1.5 to przykład - możesz dostosować ją według potrzeb */
+    font-size: 18px; /* Zwiększa rozmiar czcionki, 16px to przykład - dostosuj rozmiar według potrzeb */
+    color:rgb(83, 3, 3); /* Zmienia kolor tekstu w elemencie "opis" na niebieski */
+    text-align: justify; /* Ustala wyjustowanie tekstu w elemencie "opis" */
+}
+
+
+.container-proj {
+    display: flex;
+    flex-direction:row;
+    justify-content: baseline;
+    margin-left: 100px;
+    padding: 10px;
+    gap: 120px;
+    line-height: 1.5; /* Zwiększa odstępy pomiędzy wierszami, wartość 1.5 to przykład - możesz dostosować ją według potrzeb */
+    font-size: 16px; /* Zwiększa rozmiar czcionki, 16px to przykład - dostosuj rozmiar według potrzeb */
+    color:rgb(83, 3, 3); /* Zmienia kolor tekstu w elemencie "opis" na niebieski */
+    text-align: center; /* Ustala wyjustowanie tekstu w elemencie "opis" */
+    width: 30%; /* Dla przykładu, ustawiamy szerokość na 50% oryginalnej szerokości */
+    height: auto; /* Automatyczne skalowanie wysokości, aby zachować proporcje */
+    border-radius: 5%; /* Ustawiamy border-radius na 50%, co daje zaokrąglony kształt */
+    margin-bottom: 0px; /* Ustaw odstęp na przykład 20 pikseli */
+}
+
+.container-proj2 {
+    display: flex;
+    flex-direction:row;
+    justify-content: baseline;
+    margin: 100px;
+    padding: 10px;
+    gap: 100px;
+    line-height: 1.5; /* Zwiększa odstępy pomiędzy wierszami, wartość 1.5 to przykład - możesz dostosować ją według potrzeb */
+    font-size: 16px; /* Zwiększa rozmiar czcionki, 16px to przykład - dostosuj rozmiar według potrzeb */
+    color:rgb(83, 3, 3); /* Zmienia kolor tekstu w elemencie "opis" na niebieski */
+    text-align: center; /* Ustala wyjustowanie tekstu w elemencie "opis" */
+    width: 40%; /* Dla przykładu, ustawiamy szerokość na 50% oryginalnej szerokości */
+    height: auto; /* Automatyczne skalowanie wysokości, aby zachować proporcje */
+    border-radius: 5%; /* Ustawiamy border-radius na 50%, co daje zaokrąglony kształt */
+    margin-top: 0px;
+}
+
+
+.container-proj img {
+    border-radius: 10px; /* Możesz dostosować wartość do swoich preferencji */
+}
+
+.container-proj2 img {
+    border-radius: 10px; /* Możesz dostosować wartość do swoich preferencji */
+}
+
+.img-class {
+    width: 115%; /* Dla przykładu, ustawiamy szerokość na 50% oryginalnej szerokości */
+    height: auto; /* Automatyczne skalowanie wysokości, aby zachować proporcje */
+    border-radius: 5%; /* Ustawiamy border-radius na 50%, co daje zaokrąglony kształt */
+}
+
+
+/* Styl dla obrazków w kontenerze */
+.container-proj img {
+    width: 200px;
+    height: 150px;
+    transition: transform 0.3s; /* Dodajemy efekt przejścia */
+}
+
+/* Po najechaniu na obrazek powiększamy go */
+.container-proj img:hover {
+    transform: scale(1.1);
+}
+
+/* Styl dla obrazków w drugim kontenerze */
+.container-proj2 img {
+    width: 200px;
+    height: 150px;
+    transition: transform 0.3s;
+}
+
+.container-proj2 img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+.container-kon{
+    display: flex;
+    flex-direction:row;
+    justify-content: left;
+    margin: 100px;
+    padding: 70px;
+    gap: 100px;
+    line-height: 1.5; /* Zwiększa odstępy pomiędzy wierszami, wartość 1.5 to przykład - możesz dostosować ją według potrzeb */
+    font-size: 25px; /* Zwiększa rozmiar czcionki, 16px to przykład - dostosuj rozmiar według potrzeb */
+    color:rgb(83, 3, 3); /* Zmienia kolor tekstu w elemencie "opis" na niebieski */
+    text-align: center; /* Ustala wyjustowanie tekstu w elemencie "opis" */
+    width: 35%; /* Dla przykładu, ustawiamy szerokość na 50% oryginalnej szerokości */
+    height: auto; /* Automatyczne skalowanie wysokości, aby zachować proporcje */
+    border-radius: 5%; /* Ustawiamy border-radius na 50%, co daje zaokrąglony kształt */
+    margin-top: 10px;
+}
+
+
+.container-blog {
+    margin: 100px;
+    line-height: 1.5; /* Zwiększa odstępy pomiędzy wierszami, wartość 1.5 to przykład - możesz dostosować ją według potrzeb */
+    font-size: 14px; /* Zwiększa rozmiar czcionki, 16px to przykład - dostosuj rozmiar według potrzeb */
+    color:rgb(83, 3, 3); /* Zmienia kolor tekstu w elemencie "opis" na niebieski */
+    text-align:justify;
+
+}
+
+footer {
+    background-color:rgb(117, 5, 57);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }

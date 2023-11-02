@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moja Strona</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+    <header>
+    
+        <nav class="menu">
+
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="projekty.html">Projekty</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <div class="container">
+        <section>
+            <article class="art1">
+                <header>
+                    <h1>Projekt nr 1. </h1>
+                </header>
+                <h3>Baza danych SQL</h3>
+                    <p> Autorski projekt bazy danych wraz z kodem SQL tworzącym bazy danych,
+                        wstawiającym fikcyjne dane testowe oraz skrypty analityczne pozwalające na przeprowadzanie pogłębionych analiz
+                        informacji zawartych w bazie danych. Projekt zawiera opisy projektów oraz skrypty.</p>
+                    <p>
+                        Celem projektu jest stworzenie bazy danych dla sklepu, który prowadzi działalność w zakresie sprzedaży towarów dla mężczyzn tj. odzież, obuwie, bielizna, galanteria skórzana, które nabywa od różnych dostawców tj. hurtowników i producentów. Klientami Firmy są osoby i inne firmy. 
+                    </p>Zaprojektowana baza danych obejmuje procesy: </p>
+                    <ul>
+                        <li>zbieranie zamówień od klientów (w formie on-line);</li>
+                        <li>sprzedaż towarów dla klientów na podstawie złożonych zamówień i ich wysyłkę do klienta;</li>
+                        <li>gromadzenie danych o klientach;</li>
+                        <li>gromadzenie danych o zakupach.</li>
+                    </ul>
+      
+                    <p>Baza będzie przechowywać dane dotyczące:</p>
+                    <ul>
+                        <li>klienci (min. data rejestracji, imię, nazwisko, e-mail, telefon, typ klienta);</li>
+                        <li>składane zamówienia (min. ilość produkt, daty zamówienia, daty realizacji zamówienia, daty wysyłki towarów, formę płatności, datę płatności, formę dostawy, adres dostawy);</li>
+                        <li>sprzedaż towarów (min. ilość);</li>
+                        <li>zakupy towarów (min. ilość, cena zakupu);</li>
+                        <li>produkty (min. nazwa, kolor, rozmiar, cena sprzedaży);</li>
+                        <li>kategorie produktów, podkategorie produktów.</li>
+                    </ul>
+                        <p> Baza danych będzie posiadać relacyjną strukturę tabel i ma ułatwiać selektywne pobieranie przechowywanych w niej informacji.</p>
+                        <p>Baza ma umożliwić dodawanie, usuwanie i modyfikacje poszczególnych rekordów bazy.
+    
+                        <p>Do implementacji zostanie wykorzystany system zarządzania bazą MySQL</p>
+                        <p>Przedmiotowa baza nie tylko będzie przechowywać dane, ułatwiać selektywne pobieranie przechowywanych w niej informacji, ale również umożliwić prowadzenie zaawansowanych czynności analitycznych ( zestawienia, miary, wskaźniki etc.) w oparciu o zgromadzone dane w zakresie:
+                            <ul>
+                                <li>Analizy zakupów</li>
+                                <li>Analizy sprzedaży</li>
+                                <li>Analizy zamówień</li>
+                                <li>Analizy klientów</li>
+                              </ul>
+        
+                            </p>
+                        <p>Struktura bazy po przekształceniu projektu koncepcyjnego na relacyjny projekt bazy danych: </p>
+    
+                    
+                    <figure>
+                        <img class="schemat" src="schemat.jpg" width="1100" height="850" alt="Bazy danych SQL">
+                        <figcaption>schemat bazy</figcaption>
+                      </figure>
+                      
+                    <div class = linki> 
+                    <p>kod SQL do pobrania:</p>
+                    <hr>
+                    <ol>
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/utworzenie%20bazy%20z%20tabelami.sql" target="_blank">utworzenie bazy z tabelami.sql</a></li>
+                        <p>
+                              Baza danych o nazwie "sklep" została utworzona. na podstawie polecenia: "CREATE DATABASE sklep;"" 
+                        </p>
+                    
+                        <p>
+                            Stworzono kolumny w bazie: za popmocą polecenia 
+                            CREATE TABLE nazwa_tabeli
+                            (
+                                kolumna1 typ_danych,
+                                kolumna2 typ_danych,
+                                ...
+                                kolumnaN typ_danych,
+                                CONSTRAINT nazwa_kontrainta PRIMARY KEY (kolumna_kluczowa)
+                            );
+
+                        </p>
+                        <p> Tabele: 
+                            <h2>Tabele w Bazie Danych</h2>
+                            <table border="1">
+                                <tr>
+                                    <th>Tabela</th>
+                                    <th>Opis</th>
+                                    <th>Kolumny</th>
+                                </tr>
+                                <tr>
+                                    <td>adresy_dostawy</td>
+                                    <td>Informacje o adresach dostawy</td>
+                                    <td>Kolumny: id_adres_dostawy, ulica, miasto, kod_pocztowy, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>formy_dostawy</td>
+                                    <td>Opis różnych form dostawy</td>
+                                    <td>Kolumny: id_forma_dostawy, nazwa, opis, koszt, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>formy_płatności</td>
+                                    <td>Opis różnych form płatności</td>
+                                    <td>Kolumny: id_forma_płatności, nazwa, opis, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>kanały_sprzedaży</td>
+                                    <td>Opis różnych kanałów sprzedaży</td>
+                                    <td>Kolumny: id_kanał, nazwa, opis, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>kategorie</td>
+                                    <td>Informacje o kategoriach produktów</td>
+                                    <td>Kolumny: id_kategoria, nazwa, opis, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>klienci</td>
+                                    <td>Dane klientów, takie jak imię, nazwisko, e-mail, telefon, itp.</td>
+                                    <td>Kolumny: id_klient, imię, nazwisko, e-mail, telefon, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>podkategorie</td>
+                                    <td>Informacje o podkategoriach produktów</td>
+                                    <td>Kolumny: id_podkategoria, nazwa, opis, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>produkty</td>
+                                    <td>Dane o produktach, takie jak kody, nazwy, ceny, itp.</td>
+                                    <td>Kolumny: id_produkt, kod, nazwa, cena, opis, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>sprzedaż</td>
+                                    <td>Informacje o sprzedaży, zawierające identyfikatory zamówień i produktów.</td>
+                                    <td>Kolumny: id_sprzedaż, id_produkt, id_zamówienie, ilość, cena_sprzedaży, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>typy_klientów</td>
+                                    <td>Różne typy klientów</td>
+                                    <td>Kolumny: id_typ_klienta, nazwa, opis, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>zakupy</td>
+                                    <td>Informacje o zakupach produktów.</td>
+                                    <td>Kolumny: id_zakup, id_produkt, data_zakupu, ilość, itp.</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>Dane o zamówieniach, w tym klientach, datach i dostawach.</td>
+                                    <td>Kolumny: id_zamówienie, id_adres_dostawy, id_forma_dostawy, id_kanał, id_klient, id_forma_płatności, data_zamówienia, itp.</td>
+                                </tr>
+                            </table>
+                        
+                            Każda tabela ma przypisane kolumny, które zawierają konkretne informacje o encjach, które są przechowywane w danej tabeli.
+                        
+                            W tabelach wykorzystano klucze główne, które są unikalnymi identyfikatorami dla rekordów w danej tabeli.
+                        
+                            Istnieją relacje między tabelami, choć kod nie zawiera wyraźnych definicji kluczy obcych.
+                        
+                            Struktura bazy danych jest stworzona tak, aby umożliwić zarządzanie informacjami potrzebnymi do funkcjonowania sklepu internetowego, takimi jak produkty, klienci, zamówienia, dostawy, płatności, kategorie, itp.
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/dodanie%20danych%20testowych.sql" target="_blank">dodanie danych testowych.sql</a></li>
+        
+                        <p>
+                            Na podstawie utworzonych tabel dokonano dodania danych "fikcyjnych" za pomocą polecenia:
+                            INSERT INTO nazwa_tabeli (kolumna1, kolumna2, ...) VALUES (wartość1, wartość2, ...);
+                            W każdym z tych przykładów, polecenie INSERT INTO wstawia konkretne dane do odpowiedniej tabeli
+
+                        </p>
+                            
+        
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/dodanie%20kluczy%20obcych.sql" target="_blank">dodadnie kluczy obcych.sql</a></li>
+                        
+                        <p>
+                            <table border="1">
+                                <tr>
+                                    <th>Tabela</th>
+                                    <th>Kolumna</th>
+                                    <th>Klucz Obcy</th>
+                                    <th>Tabela Docelowa</th>
+                                    <th>Kolumna Docelowa</th>
+                                </tr>
+                                <tr>
+                                    <td>klienci</td>
+                                    <td>id_typ_klienta</td>
+                                    <td>fk_klient_typ</td>
+                                    <td>typy_klientów</td>
+                                    <td>id_typ_klienta</td>
+                                </tr>
+                                <tr>
+                                    <td>podkategorie</td>
+                                    <td>id_kategoria</td>
+                                    <td>fk_podkategoria_kategoria</td>
+                                    <td>kategorie</td>
+                                    <td>id_kategoria</td>
+                                </tr>
+                                <tr>
+                                    <td>produkty</td>
+                                    <td>id_podkategoria</td>
+                                    <td>fk_produkt_podkategoria</td>
+                                    <td>podkategorie</td>
+                                    <td>id_podkategoria</td>
+                                </tr>
+                                <tr>
+                                    <td>sprzedaż</td>
+                                    <td>id_produkt</td>
+                                    <td>fk_sprzedaz_produkt</td>
+                                    <td>produkty</td>
+                                    <td>id_produkt</td>
+                                </tr>
+                                <tr>
+                                    <td>sprzedaż</td>
+                                    <td>id_zamówienie</td>
+                                    <td>fk_sprzedaz_zam</td>
+                                    <td>zamówienia</td>
+                                    <td>id_zamówienie</td>
+                                </tr>
+                                <tr>
+                                    <td>zakupy</td>
+                                    <td>id_produkt</td>
+                                    <td>fk_zakupy_prod</td>
+                                    <td>produkty</td>
+                                    <td>id_produkt</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>id_adres_dostawy</td>
+                                    <td>fk_zamowienia_adres</td>
+                                    <td>adresy_dostawy</td>
+                                    <td>id_adres_dostawy</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>id_forma_dostawy</td>
+                                    <td>fk_zamowienia_dostawy</td>
+                                    <td>formy_dostawy</td>
+                                    <td>id_forma_dostawy</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>id_kanał</td>
+                                    <td>fk_zamowienia_kanal</td>
+                                    <td>kanały_sprzedaży</td>
+                                    <td>id_kanał</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>id_klient</td>
+                                    <td>fk_zamowienia_klient</td>
+                                    <td>klienci</td>
+                                    <td>id_klient</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>id_forma_płatności</td>
+                                    <td>fk_zamowienia_płatnosc</td>
+                                    <td>formy_płatności</td>
+                                    <td>id_forma_płatności</td>
+                                </tr>
+                            </table>
+                            <h2>Tworzenie indeksów (CREATE INDEX)</h2>
+                            <table border="1">
+                                <tr>
+                                    <th>Tabela</th>
+                                    <th>Kolumna</th>
+                                </tr>
+                                <tr>
+                                    <td>adresy_dostawy</td>
+                                    <td>id_adres_dostawy</td>
+                                </tr>
+                                <tr>
+                                    <td>formy_dostawy</td>
+                                    <td>id_forma_dostawy</td>
+                                </tr>
+                                <tr>
+                                    <td>formy_płatności</td>
+                                    <td>id_forma_płatności</td>
+                                </tr>
+                                <tr>
+                                    <td>kanały_sprzedaży</td>
+                                    <td>id_kanał</td>
+                                </tr>
+                                <tr>
+                                    <td>kategorie</td>
+                                    <td>id_kategoria</td>
+                                </tr>
+                                <tr>
+                                    <td>klienci</td>
+                                    <td>id_klient</td>
+                                </tr>
+                                <tr>
+                                    <td>podkategorie</td>
+                                    <td>id_podkategoria</td>
+                                </tr>
+                                <tr>
+                                    <td>produkty</td>
+                                    <td>id_produkt</td>
+                                </tr>
+                                <tr>
+                                    <td>sprzedaż</td>
+                                    <td>id_sprzedaż</td>
+                                </tr>
+                                <tr>
+                                    <td>typy_klientów</td>
+                                    <td>id_typ_klienta</td>
+                                </tr>
+                                <tr>
+                                    <td>zakupy</td>
+                                    <td>id_zakup</td>
+                                </tr>
+                                <tr>
+                                    <td>zamówienia</td>
+                                    <td>id_zamówienie</td>
+                                </tr>
+                            </table>
+                            Wprowadzenie kluczy obcych i indeksów jest ważnym krokiem w projektowaniu bazy danych, aby zapewnić spójność danych i poprawić wydajność zapytań. Twój zestaw poleceń SQL wydaje się poprawny i korzystny dla struktury bazy danych.
+                                                </p>
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/widoki%20mysql.sql" target="_blank">widoki mysql.sql</a></li>
+                       <p>
+                        widoki, które są używane do celów analitycznych, umożliwiając bardziej zaawansowane i złożone zapytania do danych. Oto krótka analiza utworzonych widoków:
+
+                        <ol>
+                            <li>v_produkty: Ten widok łączy informacje z tabel "produkty", "podkategorie" i "kategorie" w celu uzyskania bardziej kompletnych informacji na temat produktów, ich podkategorii i kategorii.</li>
+                            <li>v_zakupy: Ten widok opiera się na widoku "v_produkty" i dodaje informacje o zakupach, takie jak ilość i cena zakupu produktu.</li>
+                            <li>v_zamówienia: Ten widok integruje informacje z różnych tabel, takie jak "zamówienia", "formy_dostawy", "kanały_sprzedaży", "formy_płatności" i "adresy_dostawy", w celu uzyskania pełniejszego obrazu zamówień klientów.</li>
+                            <li>v_klienci: Ten widok zawiera informacje na temat klientów wraz z ich typami klientów z tabel "klienci" i "typy_klientów."</li>
+                            <li>v_sprzedaż: Ten widok łączy dane o sprzedaży z widokiem "v_produkty" i "v_zamówienia" w celu uzyskania bardziej szczegółowych informacji o sprzedanych produktach.</li>
+                            <li>v_sprzedaż2: Ten widok również zawiera dane o sprzedaży, ale zawiera dodatkowe informacje na temat podkategorii i kategorii produktów.</li>
+                            <li>v_statystyki_zakupy: Ten widok generuje statystyki dotyczące zakupów, takie jak liczba produktów, ich wartość i podsumowania kategorii.</li>
+                            <li>v_sprzedaż_zamówienia: Ten widok łączy informacje o sprzedaży z informacjami o zamówieniach i klientach, umożliwiając bardziej zaawansowane analizy.</li>
+                            <li>v_statystyki_sprzedaż: Ten widok generuje statystyki dotyczące sprzedaży podobne do widoku "v_statystyki_zakupy", ale dla danych z widoku "v_sprzedaż_zamówienia".</li>
+                        </ol>
+
+Te widoki pozwalają na wygodne i efektywne analizowanie danych w bazie danych, co jest przydatne w celach analitycznych i raportowych. Dzięki nim można wykonywać bardziej skomplikowane zapytania i generować raporty na bazie dostępnych informacji.
+
+                       </p>
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/analizy%20sprzedaz.sql" target="_blank">analizy sprzedaz.sql</a></li>
+                        <p>
+                            Analiza danych wykorzystuje procedury oraz widoki w bazie danych "sklep". 
+                        </p>
+                        <p>
+                            Poniżej możliwe do uzyskania statystykiw zakresie analizy sprzedaży na podstawie stworzonych idoków i procedur:
+                        </p>
+
+                        <h2>Operacje na Bazie Danych</h2>
+                        <table border="1">
+                            <tr>
+                                <th>Operacja</th>
+                            </tr>
+                            <tr>
+                                <td>Wybrano produkty o kolorze "biały" i rozmiarze "xl" za pomocą procedury sprzedazProduktKolorRozmiar.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono łączną ilość sprzedaży ogółem za pomocą procedury sprzedazIlosc.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono łączną wartość zakupów ogółem za pomocą procedury sprzedazWartosc.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono łączną ilość sprzedaży ogółem za pomocą procedury sprzedazIloscParametr.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono łączną wartość zakupów ogółem za pomocą procedury sprzedazWartoscParametr.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono ilość produktów oraz wartość produktów według kategorii i podkategorii.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono ilość i wartość zakupów wg produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Wyświetlono top N produktów w kategorii według ilości za pomocą procedury sprzedazKategoriaIloscTopN.</td>
+                            </tr>
+                            <tr>
+                                <td>Wyświetlono top N produktów w podkategorii według ilości za pomocą procedury sprzedazPodkategoriaIloscTopN.</td>
+                            </tr>
+                            <tr>
+                                <td>Wyświetlono top N produktów w kategorii według wartości za pomocą procedury sprzedazKategoriaWartoscTopN.</td>
+                            </tr>
+                            <tr>
+                                <td>Wyświetlono top N produktów w podkategorii według wartości za pomocą procedury sprzedazPodkategoriaWartoscTopN.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono top 3 kategorie według liczby produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono top 3 podkategorie według liczby produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono top 10 produktów według liczby produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono procentowy udział wartości produktów w całości.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono procentowy udział ilości kategorii w całości.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono procentowy udział ilości podkategorii w całości.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono procentowy udział ilości produktów w całości.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono procentowy udział ilości kategorii w całości.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono procentowy udział ilości podkategorii w całości.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg kwartałów ogółem.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg produktów i kwartałów.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg podkategorii i kwartałów.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg kategorii i kwartałów.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono wartość sprzedaży wg formy dostawy.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono wartość sprzedaży wg kanału sprzedaży.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono wartość sprzedaży wg formy płatności.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono wartość sprzedaży wg miasta dostawy.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono wartość sprzedaży wg typu klienta.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg formy dostawy.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg kanału sprzedaży.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg formy płatności.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg miasta dostawy.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg typu klienta.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono kategorie wg koloru - ilości w formie tabeli przestawnej.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono podkategorie wg koloru - wartości w formie tabeli przestawnej.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono wartość sprzedaży wg podkategorii i kwartałów.</td>
+                            </tr>
+                            <tr>
+                                <td>Przedstawiono sprzedaż wg koloru i rozmiaru w kategorii "spodnie" - ilości w formie tabeli przestawnej.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono sumy częściowe wg kategorii i podkategorii - ilości i wartości.</td>
+                            </tr>
+                            <tr>
+                                <td>Obliczono sumy częściowe wg kategorii - ilości i wartości.</td>
+                            </tr>
+                        </table>
+                    </body>
+                    </html>
+                    
+                    Ta tabela HTML zawiera opisane operacje bez numerów i punktorów, co czyni ją bardziej czytelną. Możesz dostosować ją według swoich preferencji wizualnych.
+                    
+
+
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/analizy%20zakupy.sql" target="_blank">analizy zakupy.sql</a></li>
+                       
+                       <p>
+                        zestaw procedur SQL, które wykonują różne analizy na danych dotyczących zakupów produktów w sklepie. To świetne narzędzie do analizy danych i generowania raportów. Oto wyniki przeprowadzonych analiz w formie bezosobowej:
+                        
+                        <table border="1">
+                            <tr>
+                                <th>Operacja</th>
+                            </tr>
+                            <tr>
+                                <td>Produkty wg Koloru i Rozmiaru: Ta procedura zwraca produkty o określonym kolorze i rozmiarze wraz z informacjami o tych produktach, takimi jak cena, kategoria i podkategoria.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość Zakupów Ogółem: Ta procedura oblicza łączną ilość zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Wartość Zakupów Ogółem: Ta procedura oblicza łączną wartość wszystkich zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość Zakupów Ogółem - Parametr: Ta procedura oblicza łączną ilość zakupionych produktów i zapisuje ją w parametrze.</td>
+                            </tr>
+                            <tr>
+                                <td>Wartość Zakupów Ogółem - Parametr: Ta procedura oblicza łączną wartość zakupionych produktów i zapisuje ją w parametrze.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość i Wartość Zakupów wg Kategorii i Podkategorii: Ta analiza prezentuje ilość i wartość zakupów według kategorii i podkategorii produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość i Wartość Zakupów wg Produktu: Ta analiza prezentuje ilość i wartość zakupów dla każdego produktu.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Kategorii według Ilości: Ta procedura zwraca top N produktów w określonej kategorii według ilości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Podkategorii według Ilości: Ta procedura zwraca top N produktów w określonej podkategorii według ilości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Kategorii według Wartości: Ta procedura zwraca top N produktów w określonej kategorii według wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Podkategorii według Wartości: Ta procedura zwraca top N produktów w określonej podkategorii według wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top 3 Kategorie wg Liczby Produktów: Ta analiza przedstawia top 3 kategorie według liczby zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top 3 Podkategorie wg Liczby Produktów: Ta analiza przedstawia top 3 podkategorie według liczby zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top 10 Produktów wg Liczby Produktów: Ta analiza przedstawia top 10 produktów według liczby zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Wartości Produktów: Ta analiza oblicza procentowy udział wartości każdego produktu w całkowitej wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Wartości Kategorii: Ta analiza oblicza procentowy udział wartości kategorii w całkowitej wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Wartości Podkategorii: Ta analiza oblicza procentowy udział wartości podkategorii w całkowitej wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Ilości Produktów: Ta analiza oblicza procentowy udział ilości każdego produktu w całkowitej ilości zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Ilości Kategorii: Ta analiza oblicza procentowy udział ilości kategorii w całkowitej ilości zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Ilości Podkategorii: Ta analiza oblicza procentowy udział ilości podkategorii w całkowitej ilości zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Kategorie wg Koloru - Ilości - Tabela Przestawna: Ta analiza przedstawia ilość zakupionych produktów w każdej kategorii w zależności od koloru.</td>
+                            </tr>
+                            <tr>
+                                <td>Podkategorie wg Koloru - Wartości - Tabela Przestawna: Ta analiza przedstawia wartość zakupionych produktów w każdej podkategorii w zależności od koloru.</td>
+                            </tr>
+                            <tr>
+                                <td>Kategorie wg Koloru i Rozmiaru - Ilości - Tabela Przestawna: Ta procedura zwraca ilość zakupionych produktów w określonej kategorii według koloru i rozmiaru.</td>
+                            </tr>
+                            <tr>
+                                <td>Sumy Częściowe wg Kategorii i Podkategorii - Ilości i Wartości: Ta analiza przedstawia sumy częściowe ilości i wartości zakupów według kategorii i podkategorii.</td>
+                            </tr>
+                            <tr>
+                                <td>Sumy Częściowe wg Kategorii - Ilości i Wartości: Ta analiza przedstawia sumy częściowe ilości i wartości zakupów według kategorii.</td>
+                            </tr>
+                        </table>
+
+
+
+                       </p>
+                        <li><a href="https://github.com/PiotrDlubak/projekt_bazodanowy/blob/main/analizy%20zamowienia.sql" target="_blank">analizy zamowienia.sql</a></li>
+                      
+
+                        <h2>Operacje na Bazie Danych</h2>
+                        <table border="1">
+                            <tr>
+                                <th>Operacja</th>
+                            </tr>
+                            <tr>
+                                <td>Produkty wg Koloru i Rozmiaru: Ta procedura zwraca produkty o określonym kolorze i rozmiarze wraz z informacjami o tych produktach, takimi jak cena, kategoria i podkategoria.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość Zakupów Ogółem: Ta procedura oblicza łączną ilość zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Wartość Zakupów Ogółem: Ta procedura oblicza łączną wartość wszystkich zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość Zakupów Ogółem - Parametr: Ta procedura oblicza łączną ilość zakupionych produktów i zapisuje ją w parametrze.</td>
+                            </tr>
+                            <tr>
+                                <td>Wartość Zakupów Ogółem - Parametr: Ta procedura oblicza łączną wartość zakupionych produktów i zapisuje ją w parametrze.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość i Wartość Zakupów wg Kategorii i Podkategorii: Ta analiza prezentuje ilość i wartość zakupów według kategorii i podkategorii produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Ilość i Wartość Zakupów wg Produktu: Ta analiza prezentuje ilość i wartość zakupów dla każdego produktu.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Kategorii według Ilości: Ta procedura zwraca top N produktów w określonej kategorii według ilości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Podkategorii według Ilości: Ta procedura zwraca top N produktów w określonej podkategorii według ilości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Kategorii według Wartości: Ta procedura zwraca top N produktów w określonej kategorii według wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top N Produktów w Podkategorii według Wartości: Ta procedura zwraca top N produktów w określonej podkategorii według wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top 3 Kategorie wg Liczby Produktów: Ta analiza przedstawia top 3 kategorie według liczby zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top 3 Podkategorie wg Liczby Produktów: Ta analiza przedstawia top 3 podkategorie według liczby zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Top 10 Produktów wg Liczby Produktów: Ta analiza przedstawia top 10 produktów według liczby zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Wartości Produktów: Ta analiza oblicza procentowy udział wartości każdego produktu w całkowitej wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Wartości Kategorii: Ta analiza oblicza procentowy udział wartości kategorii w całkowitej wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Wartości Podkategorii: Ta analiza oblicza procentowy udział wartości podkategorii w całkowitej wartości zakupów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Ilości Produktów: Ta analiza oblicza procentowy udział ilości każdego produktu w całkowitej ilości zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Ilości Kategorii: Ta analiza oblicza procentowy udział ilości kategorii w całkowitej ilości zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Procentowy Udział Ilości Podkategorii: Ta analiza oblicza procentowy udział ilości podkategorii w całkowitej ilości zakupionych produktów.</td>
+                            </tr>
+                            <tr>
+                                <td>Kategorie wg Koloru - Ilości - Tabela Przestawna: Ta analiza przedstawia ilość zakupionych produktów w każdej kategorii w zależności od koloru.</td>
+                            </tr>
+                            <tr>
+                                <td>Podkategorie wg Koloru - Wartości - Tabela Przestawna: Ta analiza przedstawia wartość zakupionych produktów w każdej podkategorii w zależności od koloru.</td>
+                            </tr>
+                            <tr>
+                                <td>Kategorie wg Koloru i Rozmiaru - Ilości - Tabela Przestawna: Ta procedura zwraca ilość zakupionych produktów w określonej kategorii według koloru i rozmiaru.</td>
+                            </tr>
+                            <tr>
+                                <td>Sumy Częściowe wg Kategorii i Podkategorii - Ilości i Wartości: Ta analiza przedstawia sumy częściowe ilości i wartości zakupów według kategorii i podkategorii.</td>
+                            </tr>
+                            <tr>
+                                <td>Sumy Częściowe wg Kategorii - Ilości i Wartości: Ta analiza przedstawia sumy częściowe ilości i wartości zakupów według kategorii.</td>
+                            </tr>
+                        </table>
+                    </body>
+                    </body>
+                    </html>
+                    
+                    Powyższy kod HTML tworzy uporządkowaną listę (numerowaną) zawierającą opisane zapytania SQL. Możesz go dostosować według własnych preferencji wizualnych.
+                    
+                      
+                    </div>
+            </article>  
+          </section>
+
+
+    </div>
+
+
+
+    <footer>
+        &copy; 2023 Piotr Dłubak
+    </footer>
+</body>
+</html>
