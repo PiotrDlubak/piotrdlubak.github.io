@@ -13,7 +13,9 @@ body {
     width: 80%; /* Ustal szerokość obszaru głównego */
     margin: 0 auto; /* Wyśrodkowanie elementu na poziomie */
     padding-bottom: px;
-    letter-spacing: 1px;
+    font-style: normal;
+    line-height: 1.5em;
+    font-size: 14px;
 }
 
 
@@ -74,6 +76,19 @@ body {
 }
 
 
+.art1{
+    font-size: 14px;
+}
+
+.kod{
+
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    border-width: 1px;
+    width: 100%;
+    background-color:rgb(239, 239, 231);
+
+}
 .container-proj {
     display: flex;
     flex-direction:row;
@@ -177,6 +192,63 @@ body {
 
 }
 
+
+/* Resetowanie stylów dla tabeli */
+.dataframe {
+    border-collapse: collapse;
+    width: auto; /* Automatyczna szerokość */
+    table-layout: auto; /* Dopasowanie szerokości do zawartości */
+}
+
+/* Stylowanie nagłówka tabeli */
+.dataframe th {
+    background-color: #f2f2f2;
+}
+
+/* Stylowanie komórek tabeli */
+.dataframe td, .dataframe th {
+    border: 1px solid #dddddd;
+    text-align: right;
+    padding: 2px;
+    margin-left: 100px;
+}
+
+/* Dodatkowy styl dla tabeli (możesz dostosować według potrzeb) */
+.styled-table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: auto; /* Automatyczna szerokość */
+    table-layout: auto; /* Dopasowanie szerokości do zawartości */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-left: 100px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 5px 10px;
+    text-align: right;
+}
+
+.styled-table th {
+    background-color: rgb(152, 15, 79);
+    color: #ffffff;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #fffefe;
+}
+
+.styled-table tbody tr:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.ng{
+    font-weight: bolder;
+    font-size: 13px;
+
+}
 footer {
     background-color:rgb(117, 5, 57);
     color: #fff;
