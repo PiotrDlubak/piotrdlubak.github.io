@@ -106,7 +106,8 @@
           
           <img src="biaschemat4.png" width="560" height="150" alt="Business Intelligence">
 
-
+          <img src="bi_00.png" width="900" height="500" alt="Business Intelligence">
+          <br>
           <h4>Tworzenie Miar na Podstawie Danych w Tabelach:</h4>
           <ol>
               <li>Liczba oferowanych towarów</li>
@@ -128,11 +129,122 @@
             
           </p>
           <li><a href="https://github.com/PiotrDlubak/Business-Intelligence" target="_blank">pliki do pobrania - BI</a></li>
+          <br>
+
           <p>
-
+            <h4> Stworzone miary analityczne w języku <strong> DAX</strong></h4>
           </p>
-                      
+          <p>
+            DAX to język używany do tworzenia formuł i obliczeń na danych w modelach tablicowych w Power BI, Analysis Services i Power Pivot w Excelu.DAX to dynamiczne formuły, które zwracają różne wyniki w zależności od kontekstu, w którym są używane</p>
+            <p >
+                <u>  wyjaśnienie, co robi każda z moich miar:</u> 
+          
+            </p>
 
+          <ol class="miary">
+
+                <li><strong>Zysk = [Suma sprzedaży] - [Suma zakupów]:</strong><br>
+                     Oblicza różnicę między sumą sprzedaży a sumą zakupów dla każdego wiersza lub komórki w raporcie.
+                </li>
+                <li><strong>TotalSumaKategoria = CALCULATE([Suma sprzedaży], all(Produkty[kategoria])):</strong><br>
+                     Oblicza sumę sprzedaży dla wszystkich produktów w danej kategorii, ignorując inne filtry na tabeli Produkty.
+                </li>
+                <li><strong>TotalSuma = CALCULATE([Suma sprzedaży], all()):</strong><br>
+                     Oblicza sumę sprzedaży dla wszystkich produktów w modelu, ignorując wszystkie filtry.
+                </li>
+                <li><strong>Średnia liczba produktów na klienta = AVERAGEX(_Miary, [Liczba oferowanych produktów] / [Liczba klientów]):</strong><br>
+                     Oblicza średnią liczbę produktów oferowanych na klienta, dzieląc liczbę oferowanych produktów przez liczbę klientów dla każdej wartości w tabeli _Miary.
+                </li>
+                <li><strong>Średni przychód na klienta = [Suma sprzedaży] / [Liczba klientów]:</strong><br>
+                     Oblicza średni przychód na klienta, dzieląc sumę sprzedaży przez liczbę klientów dla każdego wiersza lub komórki w raporcie.
+                </li>
+                <li><strong>Średni miesięczny przychód = [Suma sprzedaży] / DISTINCTCOUNT(Kalendarz[miesiąc]):</strong><br>
+                     Oblicza średni miesięczny przychód, dzieląc sumę sprzedaży przez liczbę unikalnych miesięcy w tabeli Kalendarz.
+                </li>
+                <li><strong>Suma zakupów = SUMX(Zakupy, Zakupy[ilość_jednostek] * Zakupy[cena_jednostkowa_ zakupu]):</strong><br>
+                     Oblicza sumę zakupów, mnożąc ilość jednostek i cenę jednostkową zakupu dla każdego wiersza w tabeli Zakupy, a następnie sumując wyniki.
+                </li>
+                <li><strong>Suma sprzedaży = SUM('Sprzedaż'[należność]):</strong><br>
+                     Oblicza sumę sprzedaży, sumując wartości kolumny należność w tabeli Sprzedaż.
+                </li>
+                <li><strong>Różnica do poprzedniego miesiąca = IF([Mc_poprzedni] > 0, [Suma sprzedaży] - [Mc_poprzedni]):</strong><br>
+                - Oblicza różnicę między sumą sprzedaży a sumą sprzedaży z poprzedniego miesiąca, jeśli ta ostatnia jest większa od zera, w przeciwnym razie zwraca pustą wartość.
+                </li>
+                <li><strong>Ranking produktów = RANKX(ALL(Produkty[produkt]), [Suma sprzedaży]):</strong><br>
+                     Oblicza ranking produktów według sumy sprzedaży, ignorując inne filtry na kolumnie produkt w tabeli Produkty.
+                </li>
+                <li><strong>Ranking podkategorii produktów = RANKX(ALL(Produkty[podkategoria]), [Suma sprzedaży]):</strong><br>
+                     Oblicza ranking podkategorii produktów według sumy sprzedaży, ignorując inne filtry na kolumnie podkategoria w tabeli Produkty.
+                </li>
+                <li><strong>Ranking miast = RANKX(ALL(Region[miasto]), [Suma sprzedaży]):</strong><br>
+                     Oblicza ranking miast według sumy sprzedaży, ignorując inne filtry na kolumnie miasto w tabeli Region.
+                </li>
+                <li><strong>Procent zmiany = IFERROR([Róznica do poprzedniego miesiąca] / [Mc_poprzedni], BLANK()):</strong><br>
+                     Oblicza procentową zmianę między sumą sprzedaży a sumą sprzedaży z poprzedniego miesiąca, jeśli ta ostatnia jest różna od zera, w przeciwnym razie zwraca pustą wartość.
+                </li>
+                <li><strong>Opis zmiany = SWITCH(true(), [Procent zmiany] < 0, "spadek", [Procent zmiany] > 0, "wzrost", [Procent zmiany] = 0, "b/z"):</strong><br>
+                     Zwraca opis zmiany w zależności od wartości procentowej zmiany, używając instrukcji SWITCH, która sprawdza warunki po kolei i zwraca pierwszy pasujący wynik.
+                </li>
+                <li><strong>Narzut = ([Suma sprzedaży] - [Suma zakupów]) / [Suma zakupów]:</strong><br>
+                     Oblicza narzut, dzieląc różnicę między sumą sprzedaży a sumą zakupów przez sumę zakupów dla każdego wiersza lub komórki w raporcie.
+                </li>
+                <li><strong>Marża brutto = ([Suma sprzedaży] - [Suma zakupów]) / [Suma sprzedaży]:</strong><br>
+                     Oblicza marżę brutto, dzieląc różnicę między sumą sprzedaży a sumą zakupów przez sumę sprzedaży dla każdego wiersza lub komórki w raporcie.
+                </li>
+                <li><strong>Mc_poprzedni = CALCULATE([Suma sprzedaży], DATEADD(Kalendarz[Date], -1, MONTH)):</strong><br>
+                     Oblicza sumę sprzedaży z poprzedniego miesiąca, używając funkcji DATEADD, która przesuwa datę w tabeli Kalendarz o jeden miesiąc wstecz.
+                </li>
+                <li><strong>Liczba zakupionych produktów = SUM(Zakupy[ilość_jednostek]):</strong><br>
+                     Oblicza liczbę zakupionych produktów, sumując wartości kolumny ilość_jednostek w tabeli Zakupy.
+                </li>
+                <li><strong>Liczba transakcji = DISTINCTCOUNT('Sprzedaż'[id_sprzedaż]):</strong><br>
+                     Oblicza liczbę transakcji, licząc unikalne wartości kolumny id_sprzedaż w tabeli Sprzedaż.
+                </li>
+                <li><strong>Liczba sprzedanych produktów = SUM('Sprzedaż'[ilość]):</strong><br>
+                     Oblicza liczbę sprzedanych produktów, sumując wartości kolumny ilość w tabeli Sprzedaż.
+                </li>
+                <li><strong>Liczba oferowanych produktów = DISTINCTCOUNT(Produkty[id_produkt]):</strong><br>
+                     Oblicza liczbę oferowanych produktów, licząc unikalne wartości kolumny id_produkt w tabeli Produkty.
+                </li>
+                <li><strong>Liczba klientów = DISTINCTCOUNT('Sprzedaż'[paragon]):</strong><br>
+                     Oblicza liczbę klientów, licząc unikalne wartości kolumny paragon w tabeli Sprzedaż.
+                </li>
+                <li><strong>% udział podkategorii w kategorii = Divide(CALCULATE([Suma sprzedaży], ALL('Produkty'[kategoria])), CALCULATE([Suma sprzedaży], ALL('Produkty'[podkategoria]))):</strong><br>
+                     Oblicza procentowy udział podkategorii w kategorii, dzieląc sumę sprzedaży dla danej podkategorii przez sumę sprzedaży dla danej kategorii, ignorując inne filtry na tabeli Produkty.
+                </li>
+                <li><strong>% udział podkategorii ogółem = Divide([Suma sprzedaży], CALCULATE([Suma sprzedaży], ALL('Produkty'[podkategoria]))):</strong><br>
+                     Oblicza procentowy udział podkategorii ogółem, dzieląc sumę sprzedaży dla danej podkategorii przez sumę sprzedaży dla wszystkich podkategorii, ignorując inne filtry na tabeli Produkty.
+                </li>
+                <li><strong>% udział kategorii ogółem = Divide([Suma sprzedaży], CALCULATE([Suma sprzedaży], ALL('Produkty'[kategoria]))):</strong><br>
+                     Oblicza procentowy udział kategorii ogółem, dzieląc sumę sprzedaży dla danej kategorii przez sumę sprzedaży dla wszystkich kategorii, ignorując inne filtry na tabeli Produkty.
+                </li>
+            </ol>
+            
+    <br>
+        <h3> Screeny stron raportów z programu Power BI Desktop</h3>
+            
+        <img src="bi_01.png" width="900" height="500" alt="Business Intelligence">
+        <br>
+        <br>
+        <img src="bi_02.png" width="900" height="500" alt="Business Intelligence">
+        <br>
+        <br>
+        <img src="bi_03.png" width="900" height="500" alt="Business Intelligence">
+        <br>
+        <br>
+        <img src="bi_04.png" width="900" height="500" alt="Business Intelligence">
+        <br><br>
+        <img src="bi_05.png" width="900" height="500" alt="Business Intelligence">
+        <br><br>
+        <img src="bi_06.png" width="900" height="500" alt="Business Intelligence">
+        <br><br>
+        <img src="bi_07.png" width="900" height="500" alt="Business Intelligence">
+        <br><br>
+        <img src="bi_08.png" width="900" height="500" alt="Business Intelligence">
+        <br><br>
+        <img src="bi_09.png" width="900" height="500" alt="Business Intelligence">
+
+     <br>
     </div>
 
 
