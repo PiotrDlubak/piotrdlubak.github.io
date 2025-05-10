@@ -9,7 +9,7 @@
     <script src="index_pliki/3.4.16"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="index_pliki/css2.css" rel="stylesheet">
+    <link href="index_pliki/css1.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -1016,6 +1016,67 @@
                 line-height: 2.5rem
             }
         }
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: 'Inter', sans-serif;
+            min-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #215cbc;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #215cbc;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #f1f5f9;
+            color: #215cbc;
+            cursor: pointer;
+        }
+
+
+        pre.kod {
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            color: #374151;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #374151;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
     </style>
 </head>
 
@@ -1023,19 +1084,14 @@
 
     <header id="main-header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#"
+            <a href="index.html"
                 class="text-xl font-bold text-gray-800 hover:text-blue-500 transition duration-300 transform hover:scale-105">Portfolio</a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#hero"
+                <a href="index.html"
                     class="nav-link text-gray-600 hover:text-blue-500 transition duration-300 px-3 py-2 rounded-md hover:shadow-md transform hover:translate-y-[-2px] nav-active">Start</a>
-                <a href="#o-mnie"
-                    class="nav-link text-gray-600 hover:text-blue-500 transition duration-300 px-3 py-2 rounded-md hover:shadow-md transform hover:translate-y-[-2px]">O
-                    mnie</a>
-                <a href="#projekty"
-                    class="nav-link text-gray-600 hover:text-blue-500 transition duration-300 px-3 py-2 rounded-md hover:shadow-md transform hover:translate-y-[-2px]">Projekty</a>
-                <a href="#kontakt"
-                    class="nav-link text-gray-600 hover:text-blue-500 transition duration-300 px-3 py-2 rounded-md hover:shadow-md transform hover:translate-y-[-2px]">Kontakt</a>
-            </div>
+                <a href="#projekt-bi"
+                    class="nav-link text-gray-600 hover:text-blue-500 transition duration-300 px-3 py-2 rounded-md hover:shadow-md transform hover:translate-y-[-2px]">Pojekt BI</a>
+ </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button"
                     class="text-gray-600 focus:outline-none transform hover:scale-110 transition duration-300">
@@ -1074,314 +1130,267 @@
                 });
             });
         </script>
-    </header>/
+    </header>
 
 
 
     <main class="container mx-auto px-2 py-2 pt-14">
 
 
-        <section id="hero"
-            class="relative py-24 fade-in-section bg-cover bg-center rounded-lg overflow-hidden mb-14 is-visible"
-            style="background-image: url('tlo44.png');">
-            <div class="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
-            <div class="container mx-auto px-6 relative z-10 text-center text-white">
-                <h2 class="text-4xl md:text-5xl lg:text-4xl font-bold mb-2">Piotr Dłubak</h2>
-                <p class="text-lg md:text-xl lg:text-2xl mb-12 opacity-80">analityk danych, programista </p>
-                <p class="text-lg md:text-xl lg:text-2xl mb-12 opacity-80" style="color: #e0eb7fc3; font-weight: bold;">Python | SQL | ML | BI | LLM</p>
-        
-                <a href="#projekty"
-                    class="bg-blue-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-600 transition duration-300 shadow-md">Zobacz
-                    moje projekty</a>
-            </div>
-        </section>
 
-
-        <section id="o-mnie" class="py-16 bg-white rounded-lg shadow-lg mb-16 fade-in-section is-visible">
+        <section id="projekt-bi" class="py-16 bg-white rounded-lg shadow-lg mb-16 fade-in-section is-visible">
             <div class="container mx-auto px-4 md:px-8 lg:px-16">
                 <h2 class="text-2xl font-extrabold mb-6 text-gray-800 text-center md:text-left">
-                    O mnie
+                    Projekt nr 2. Business Intelligence
                 </h2>
-                <p class="text-gray-700 mb-8 text-center md:text-left">
-                    Jestem analitykiem danych, specjalizującym się w pracy z
-                    Pythonem, uczeniem maszynowym, analizie danych i SQL. Rozwijam te
-                    umiejętności, aby efektywnie radzić sobie z różnorodnymi wyzwaniami
-                    związanymi z danymi i wspierać procesy decyzyjne w obszarze biznesu.
-                </p>
 
 
-                <h3 class="text-xl font-semibold mb-4 text-gray-800 text-center md:text-left">Moje umiejętności:</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none pl-0">
-                    <li class="relative pl-6 mb-2">
-                        <span class="ent.getElementById(id);
-                        element.classList.toggle('hidden');}
-                      console.log(" Nowoczesne Portfolio załadowane!"); </script>
+                <p><strong>Opis projektu Business Intelligence</strong></p>
+        
+                    <p><strong>Motywacja:</strong><br>
+                    Impulsem do stworzenia projektu z zakresu Business Intelligence była chęć przedstawienia możliwości i korzyści z zaprojektowania i wdrożenia modelu analitycznego opartego o lokalną bazę danych w działalności gospodarczej dla mikrofirm.</p>
+        
+                    <p><strong>Opis firmy:</strong><br>
+                    Przedsiębiorstwo pod nazwą „Warzywka-Bio” prowadzi działalność gospodarczą w zakresie detalicznej sprzedaży certyfikowanych produktów „bio” i „eko”: warzyw, owoców, przypraw i napojów. Sprzedaż jest prowadzona w niewielkich osiedlowych sklepikach zlokalizowanych w 12 miejscowościach na terenie RP. Sprzedaż ta jest ewidencjonowana za pomocą kas rejestrujących. Zakupy towarów są dokonywane od różnych dostawców: producentów, rolników, przetwórców, hurtowników. Wszystkie zdarzenia gospodarcze (sprzedaż - na podstawie dziennych raportów fiskalnych oraz zakupy – na podstawie faktur VAT) są ewidencjonowane w ewidencjach sprzedaży i zakupów VAT (tabele w EXCEL) a następnie rejestrowane w małej, prostej i lokalnej bazie danych opartej o program Microsoft Access, stworzonej dla właściciela firmy w celu ułatwienia podejmowania decyzji biznesowych. Bazę danych zaprojektowano w ten sposób by w łatwy i szybki sposób umożliwiała tworzenie prostych raportów (podsumowań). Analizy i podsumowania (ilości i wartości sprzedanych towarów) były prowadzone raz na miesiąc, kwartał, rok.</p>
+        
+                  <img src="biaschemat.png" width="900" height="550" alt="Business Intelligence">
+        
+                  <h4>Wnioski:</h4>
+                  <p>Prowadzone dotychczas analizy, które były podstawą podejmowanych decyzji przez właściciela firmy okazały się niewystarczające. Przenoszenie danych z ewidencji, raportów fiskalnych było czasochłonne i pracochłonne. Przedkładane właścicielowi firmy raporty przedstawiały zagregowane ilości oraz wartości zakupionych i sprzedanych towarów w postaci surowych liczb bez uwzględnienia innych kontekstów prowadzonej działalności min. analizy wg lokalizacji, faktu, że sprzedaż warzyw i owoców podlega sezonowości, towary te nie mogą być nadmiernie gromadzone, poprzez tworzenie zapasów (zaobserwowano znaczny odsetek ubytków).</p>
+                  <p>Ponadto po zakończeniu roku obrotowego dokonano podsumowania efektów prowadzonej działalności gospodarczej i przedłożono właścicielowi firmy ustalenia z przeprowadzonej analizy, w której znalazły się wnioski:</p>
+                  <ol>
+                      <li>W lokalizacjach, gdzie znajdowały się sklepy firmy "Warzywka-Bio" powstało wiele innych warzywniaków, w tym małe markety spożywcze, które również oferowały produkty "bio" i "eko";</li>
+                      <li>Wartość sprzedaży w 2019 r. w stosunku do 2018 r. spadła o około 7%, a liczba oferowanych produktów natomiast się zwiększyła o 10 rodzajów.</li>
+                      <li>Liczba klientów (ustalona na podstawie liczby paragonów fiskalnych) również zmalało o koło 2%.</li>
+                      <li>Zaobserwowano znaczny wzrost ubytków w towarze (zepsucie, utrata świeżości, stłuczenia opakowań szklanych), ustalono, że powyższe wynika z nadmiernym tworzeniem zapasów, oraz nieprawidłowym sposobie przechowywania produktów.</li>
+                  </ol>
+                  <p>Zatem, w związku ze wzrostem konkurencji na rynku sprzedaży warzyw i owoców, spadkiem obrotów r.d.r, nadmiernymi ubytkami w towarze oraz chęcią nie tylko utrzymania własnego biznesu, ale również rozwoju i ekspansji na nowe lokalizacje i powiększenie bazy towarowej właściciel firmy zdecydował się na implementację nowych narzędzi informatycznych, które umożliwią w przyszłości skuteczniejsze podejmowanie decyzji i trwały rozwój firmy.</p>
+              
+                  <h4>Wymagania:</h4>
+                  <ol>
+                      <li>Niski koszt wdrożenia;</li>
+                      <li>Łatwa i bezproblemowa integracja z obecnym systemem informatycznym opartym na lokalnej bazie danych;</li>
+                      <li>Możliwość dokonywania pogłębionych analiz (drążenie danych);</li>
+                      <li>Możliwość łatwego i szybkiego tworzenia raportów opartych na tabelach i wykresach;</li>
+                  </ol>
+                  <p>Oczekiwane raporty i analizy:</p>
+                  <h4>W ujęciu statystycznym</h4>
+                  <ul>
+                      <li>Ilości i wartości sprzedaży wg produktów, podkategorii i kategorii produktowych;</li>
+                      <li>Struktura sprzedaży (% udziały);</li>
+                      <li>Top N (najlepiej i najgorzej sprzedające się towary);</li>
+                      <li>Analiza koszykowa (liczba klientów, liczba produktów na koszyk, wartość koszyka);</li>
+                  </ul>
+                  <h2>W ujęciu dynamicznym</h2>
+                  <ul>
+                      <li>Ilości i wartości sprzedaży wg roku, miesiąca, dni, godzin;</li>
+                      <li>Sprzedaż narastająco (miesięcznie, kwartalnie);</li>
+                      <li>Zmiany wartości sprzedaży w czasie (wzrosty i spadki) na przestrzeni czasu;</li>
+                  </ul>
+                  <h2>W ujęciu geograficznym</h2>
+                  <ul>
+                      <li>Wartość sprzedaży w regionach i miastach.</li>
+                  </ul>
+              
+                  <p>Wybór technologii:</p>
+                  <p>Z uwagi na rozmiar firmy oraz konieczność minimalizacji kosztów zdecydowano się na wdrożenie wielowymiarowego modelu danych opartych na prowadzonej już lokalnej bazie danych oraz zainstalowanie darmowego oprogramowania "Power BI Desktop" wykorzystywanego jako narzędzie analityczne typu Business Intelligence, umożliwiające prowadzenie pogłębionych analiz oraz wizualizację danych pochodzących z wielu źródeł. Powyższe spełnia również wstępne wymagania i oczekiwania odnośnie rezultatów.</p>
+                  <p>Z uwagi na fakt, iż model danych zawarty w lokalnej bazie danych oparty był schemat "płatka śniegu", w celu zoptymalizowania analiz i raportowania w programie Power BI Desktop zdecydowano się na takie przekształcenie modelu
+                  nie tracąc wartości analitycznych móc prowadzić zaawansowane analizy  przeprojektowano model do prostego układu wg schematu „gwiazdy”.</p> 
+                  <img src="biaschemat2.png" width="400" height="250" alt="Business Intelligence">
+        
+        
+                  <h3>Etapy przekształcenia do pożądanego wielowymiarowego modelu danych:</h3>
+                  <ol>
+                      <li>Utworzenie tabeli Region z przekształcenia tabeli Sklepy i przypisaniu miast do regionów sprzedaży</li>
+                      <li>Utworzenie tabeli Produkty z połączenia tabel Produkty, Podkategorie, Kategorie</li>
+                      <li>Utworzenie tabeli Data z wyodrębnienia składników daty i czasu kolumny Data w tabeli Sprzedaż</li>
+                  </ol>
+              
+                  <p>Powyższy układ znacznie ułatwi i przyspieszy prowadzenie analiz i raportowania.</p>
+              
+                  <h4>Kolumny w tabeli Sprzedaż:</h4>
+                  <ul>
+                      <li>Ilość: Ta kolumna pełnić będzie rolę faktów i reprezentuje ilość sprzedanych produktów.</li>
+                      <li>Należność: Kolumna Należność również pełnić będzie rolę faktów i zawiera informacje o wartości sprzedaży.</li>
+                  </ul>
+              
+                  <h4>Kolumny w tabeli Data:</h4>
+                  <p>Kolumny w tabeli Data pełnić będą rolę wymiaru i zawierają składniki daty i czasu, co pozwala na analizę sprzedaży w zależności od czasu.</p>
+              
+                  <h4>Kolumny w tabeli Region:</h4>
+                  <p>Kolumny w tabeli Region pełnić będą rolę wymiaru i reprezentują regiony sprzedaży, uwzględniając przypisane miasta.</p>
+              
+                  <h4>Kolumny w tabeli Produkty:</h4>
+                  <p>Kolumny w tabeli Produkty pełnić będą rolę wymiaru i reprezentują produkty oraz ich kategorie i podkategorie, umożliwiając analizę sprzedaży produktów w kontekście hierarchii kategorii.</p>
+                  
+                  <img src="biaschemat4.png" width="560" height="150" alt="Business Intelligence">
+        
+                  <img src="bi_00.png" width="900" height="500" alt="Business Intelligence">
+                  <br>
+                  <h4>Tworzenie Miar na Podstawie Danych w Tabelach:</h4>
+                  <ol>
+                      <li>Liczba oferowanych towarów</li>
+                      <li>Suma sprzedaży</li>
+                      <li>Ilość sprzedanych towarów</li>
+                      <li>Średnia wartość sprzedaży</li>
+                      <li>Średnia ilość sprzedaży</li>
+                      <li>Liczba klientów</li>
+                      <li>Liczba sprzedanych produktów na klienta</li>
+                      <li>Wartość sprzedaży na klienta</li>
+                      <li>Zysk (sprzedaż - zakupy)</li>
+                      <li>Narzut (sprzedaż - zakupy) / sprzedaż</li>
+                      <li>Marża brutto (sprzedaż - zakupy) / zakupy</li>
+                  </ol>
+              
+                  <p>Powyższe miary pozwalają na dokonywanie analiz w różnych kontekstach i przekrojach, co umożliwia lepsze zrozumienie i monitorowanie działalności firmy oraz podejmowanie informowanych decyzji.</p>
+        
+                  <p>
+                    
+                  </p>
+                  <li><a href="https://github.com/PiotrDlubak/Business-Intelligence" target="_blank">pliki do pobrania - BI</a></li>
+                  <br>
+        
+                  <p>
+                    <h4> Stworzone miary analityczne w języku <strong> DAX</strong></h4>
+                  </p>
+                  <p>
+                    DAX to język używany do tworzenia formuł i obliczeń na danych w modelach tablicowych w Power BI, Analysis Services i Power Pivot w Excelu.DAX to dynamiczne formuły, które zwracają różne wyniki w zależności od kontekstu, w którym są używane</p>
+                    <p >
+                        <u>  wyjaśnienie, co robi każda z moich miar:</u> 
+                  
+                    </p>
+        
+                  <ol class="miary">
+                    <style>
+                      .miary {
+                        list-style: decimal inside;
+                        padding-left: 1rem;
+                        margin: 1rem 0;
+                        font-size: 1rem;
+                        line-height: 1.6;
+                        color: #374151;
+                      }
 
+                      .miary li {
+                        margin-bottom: 0.5rem;
+                        padding-left: 0.5rem;
+                        position: relative;
+                      }
 
-                        </span>
-                        <h4 class="font-semibold text-gray-800 inline">Programowanie w Pythonie</h4>
-                        <p class="text-sm text-gray-600">Skuteczne wykorzystywanie Pythona do analizy danych i tworzenia
-                            modeli uczenia
-                            maszynowego.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">SQL</h4>
-                        <p class="text-sm text-gray-600">Posiadanie umiejętności posługiwania się językiem SQL, co jest
-                            niezbędne do
-                            efektywnego zarządzania danymi w bazach danych.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Uczenie maszynowe</h4>
-                        <p class="text-sm text-gray-600">Znajomość podstawowych algorytmów uczenia maszynowego oraz
-                            umiejętność tworzenia,
-                            trenowania i oceny modeli.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Statystyka</h4>
-                        <p class="text-sm text-gray-600">Zrozumienie kluczowych pojęć statystycznych, co pomaga w
-                            analizie danych i
-                            interpretacji wyników.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Analiza danych</h4>
-                        <p class="text-sm text-gray-600">Umiejętność efektywnej analizy danych, w tym identyfikowania
-                            wzorców i trendów.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Wizualizacja danych</h4>
-                        <p class="text-sm text-gray-600">Tworzenie czytelnych wykresów i grafik, które ułatwiają
-                            zrozumienie i prezentację
-                            danych.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Komunikacja</h4>
-                        <p class="text-sm text-gray-600">Wysokie
-                            umiejętności komunikacyjne, zarówno w piśmie, jak i werbalnie,
-                            ułatwiające przekazywanie wyników analizy danych i sugestii.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Dbałość o jakość danych</h4>
-                        <p class="text-sm text-gray-600">Świadomość i praktyka utrzymywania wysokiej jakości danych, w
-                            tym czyszczenie i
-                            normalizacja danych.</p>
-                    </li>
-                    <li class="relative pl-6 mb-2">
-                        <span class="custom-bullet"></span>
-                        <h4 class="font-semibold text-gray-800 inline">Technologie Business Intelligence (BI)</h4>
-                        <p class="text-sm text-gray-600">Zdolność do
-                            projektowania i implementacji rozwiązań BI, w tym tworzenia
-                            interaktywnych raportów i dashboardów. Umiejętność analizy potrzeb
-                            biznesowych i dostarczania informacji przydatnych dla procesów
-                            decyzyjnych. Wykorzystywanie narzędzi BI, takich jak Power BI, do
-                            efektywnej prezentacji danych biznesowych.</p>
-                    </li>
-                </ul>
+                      .miary li::marker {
+                        color: #215cbc;
+                        font-weight: bold;
+                      }
+
+                      .miary li strong {
+                        color: #215cbc;
+                      }
+                    </style>
+        
+                        <li><strong>Zysk = [Suma sprzedaży] - [Suma zakupów]:</strong><br>
+                             Oblicza różnicę między sumą sprzedaży a sumą zakupów dla każdego wiersza lub komórki w raporcie.
+                        </li>
+                        <li><strong>TotalSumaKategoria = CALCULATE([Suma sprzedaży], all(Produkty[kategoria])):</strong><br>
+                             Oblicza sumę sprzedaży dla wszystkich produktów w danej kategorii, ignorując inne filtry na tabeli Produkty.
+                        </li>
+                        <li><strong>TotalSuma = CALCULATE([Suma sprzedaży], all()):</strong><br>
+                             Oblicza sumę sprzedaży dla wszystkich produktów w modelu, ignorując wszystkie filtry.
+                        </li>
+                        <li><strong>Średnia liczba produktów na klienta = AVERAGEX(_Miary, [Liczba oferowanych produktów] / [Liczba klientów]):</strong><br>
+                             Oblicza średnią liczbę produktów oferowanych na klienta, dzieląc liczbę oferowanych produktów przez liczbę klientów dla każdej wartości w tabeli _Miary.
+                        </li>
+                        <li><strong>Średni przychód na klienta = [Suma sprzedaży] / [Liczba klientów]:</strong><br>
+                             Oblicza średni przychód na klienta, dzieląc sumę sprzedaży przez liczbę klientów dla każdego wiersza lub komórki w raporcie.
+                        </li>
+                        <li><strong>Średni miesięczny przychód = [Suma sprzedaży] / DISTINCTCOUNT(Kalendarz[miesiąc]):</strong><br>
+                             Oblicza średni miesięczny przychód, dzieląc sumę sprzedaży przez liczbę unikalnych miesięcy w tabeli Kalendarz.
+                        </li>
+                        <li><strong>Suma zakupów = SUMX(Zakupy, Zakupy[ilość_jednostek] * Zakupy[cena_jednostkowa_ zakupu]):</strong><br>
+                             Oblicza sumę zakupów, mnożąc ilość jednostek i cenę jednostkową zakupu dla każdego wiersza w tabeli Zakupy, a następnie sumując wyniki.
+                        </li>
+                        <li><strong>Suma sprzedaży = SUM('Sprzedaż'[należność]):</strong><br>
+                             Oblicza sumę sprzedaży, sumując wartości kolumny należność w tabeli Sprzedaż.
+                        </li>
+                        <li><strong>Różnica do poprzedniego miesiąca = IF([Mc_poprzedni] > 0, [Suma sprzedaży] - [Mc_poprzedni]):</strong><br>
+                        - Oblicza różnicę między sumą sprzedaży a sumą sprzedaży z poprzedniego miesiąca, jeśli ta ostatnia jest większa od zera, w przeciwnym razie zwraca pustą wartość.
+                        </li>
+                        <li><strong>Ranking produktów = RANKX(ALL(Produkty[produkt]), [Suma sprzedaży]):</strong><br>
+                             Oblicza ranking produktów według sumy sprzedaży, ignorując inne filtry na kolumnie produkt w tabeli Produkty.
+                        </li>
+                        <li><strong>Ranking podkategorii produktów = RANKX(ALL(Produkty[podkategoria]), [Suma sprzedaży]):</strong><br>
+                             Oblicza ranking podkategorii produktów według sumy sprzedaży, ignorując inne filtry na kolumnie podkategoria w tabeli Produkty.
+                        </li>
+                        <li><strong>Ranking miast = RANKX(ALL(Region[miasto]), [Suma sprzedaży]):</strong><br>
+                             Oblicza ranking miast według sumy sprzedaży, ignorując inne filtry na kolumnie miasto w tabeli Region.
+                        </li>
+                        <li><strong>Procent zmiany = IFERROR([Róznica do poprzedniego miesiąca] / [Mc_poprzedni], BLANK()):</strong><br>
+                             Oblicza procentową zmianę między sumą sprzedaży a sumą sprzedaży z poprzedniego miesiąca, jeśli ta ostatnia jest różna od zera, w przeciwnym razie zwraca pustą wartość.
+                        </li>
+                        <li><strong>Opis zmiany = SWITCH(true(), [Procent zmiany] < 0, "spadek", [Procent zmiany] > 0, "wzrost", [Procent zmiany] = 0, "b/z"):</strong><br>
+                             Zwraca opis zmiany w zależności od wartości procentowej zmiany, używając instrukcji SWITCH, która sprawdza warunki po kolei i zwraca pierwszy pasujący wynik.
+                        </li>
+                        <li><strong>Narzut = ([Suma sprzedaży] - [Suma zakupów]) / [Suma zakupów]:</strong><br>
+                             Oblicza narzut, dzieląc różnicę między sumą sprzedaży a sumą zakupów przez sumę zakupów dla każdego wiersza lub komórki w raporcie.
+                        </li>
+                        <li><strong>Marża brutto = ([Suma sprzedaży] - [Suma zakupów]) / [Suma sprzedaży]:</strong><br>
+                             Oblicza marżę brutto, dzieląc różnicę między sumą sprzedaży a sumą zakupów przez sumę sprzedaży dla każdego wiersza lub komórki w raporcie.
+                        </li>
+                        <li><strong>Mc_poprzedni = CALCULATE([Suma sprzedaży], DATEADD(Kalendarz[Date], -1, MONTH)):</strong><br>
+                             Oblicza sumę sprzedaży z poprzedniego miesiąca, używając funkcji DATEADD, która przesuwa datę w tabeli Kalendarz o jeden miesiąc wstecz.
+                        </li>
+                        <li><strong>Liczba zakupionych produktów = SUM(Zakupy[ilość_jednostek]):</strong><br>
+                             Oblicza liczbę zakupionych produktów, sumując wartości kolumny ilość_jednostek w tabeli Zakupy.
+                        </li>
+                        <li><strong>Liczba transakcji = DISTINCTCOUNT('Sprzedaż'[id_sprzedaż]):</strong><br>
+                             Oblicza liczbę transakcji, licząc unikalne wartości kolumny id_sprzedaż w tabeli Sprzedaż.
+                        </li>
+                        <li><strong>Liczba sprzedanych produktów = SUM('Sprzedaż'[ilość]):</strong><br>
+                             Oblicza liczbę sprzedanych produktów, sumując wartości kolumny ilość w tabeli Sprzedaż.
+                        </li>
+                        <li><strong>Liczba oferowanych produktów = DISTINCTCOUNT(Produkty[id_produkt]):</strong><br>
+                             Oblicza liczbę oferowanych produktów, licząc unikalne wartości kolumny id_produkt w tabeli Produkty.
+                        </li>
+                        <li><strong>Liczba klientów = DISTINCTCOUNT('Sprzedaż'[paragon]):</strong><br>
+                             Oblicza liczbę klientów, licząc unikalne wartości kolumny paragon w tabeli Sprzedaż.
+                        </li>
+                        <li><strong>% udział podkategorii w kategorii = Divide(CALCULATE([Suma sprzedaży], ALL('Produkty'[kategoria])), CALCULATE([Suma sprzedaży], ALL('Produkty'[podkategoria]))):</strong><br>
+                             Oblicza procentowy udział podkategorii w kategorii, dzieląc sumę sprzedaży dla danej podkategorii przez sumę sprzedaży dla danej kategorii, ignorując inne filtry na tabeli Produkty.
+                        </li>
+                        <li><strong>% udział podkategorii ogółem = Divide([Suma sprzedaży], CALCULATE([Suma sprzedaży], ALL('Produkty'[podkategoria]))):</strong><br>
+                             Oblicza procentowy udział podkategorii ogółem, dzieląc sumę sprzedaży dla danej podkategorii przez sumę sprzedaży dla wszystkich podkategorii, ignorując inne filtry na tabeli Produkty.
+                        </li>
+                        <li><strong>% udział kategorii ogółem = Divide([Suma sprzedaży], CALCULATE([Suma sprzedaży], ALL('Produkty'[kategoria]))):</strong><br>
+                             Oblicza procentowy udział kategorii ogółem, dzieląc sumę sprzedaży dla danej kategorii przez sumę sprzedaży dla wszystkich kategorii, ignorując inne filtry na tabeli Produkty.
+                        </li>
+                    </ol>
+                    
+            <br>
+                <h3> Screeny stron raportów z programu Power BI Desktop</h3>
+                    
+                <img src="bi_01.png" width="900" height="500" alt="Business Intelligence">
+                <br>
+                <br>
+                <img src="bi_02.png" width="900" height="500" alt="Business Intelligence">
+                <br>
+                <br>
+                <img src="bi_03.png" width="900" height="500" alt="Business Intelligence">
+                <br>
+                <br>
+                <img src="bi_04.png" width="900" height="500" alt="Business Intelligence">
+                <br><br>
+                <img src="bi_05.png" width="900" height="500" alt="Business Intelligence">
+                <br><br>
+                <img src="bi_06.png" width="900" height="500" alt="Business Intelligence">
+        
+        
+             <br>
             </div>
+        
+        
 
-        </section>
-
-
-
-
-        <section id="projekty" class="py-16 fade-in-section">
-            <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">Wybrane Projekty</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <article
-                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="sql.jpg" alt="Grafika reprezentująca bazy danych SQL" class="project-image">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Bazy danych SQL</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            Autorski projekt bazy danych wraz z kodem SQL tworzącym bazy danych, wstawiającym dane testowe oraz skrypty analityczne pozwalające na przeprowadzanie pogłębionych analiz informacji zawartych w bazie danych. Projekt zawiera opisy projektów oraz skrypty.Użyte
-                            technologie:  MySQL. Celem projektu jest stworzenie bazy danych dla sklepu, który prowadzi działalność w zakresie sprzedaży towarów dla mężczyzn tj. odzież, obuwie, bielizna, galanteria skórzana, które nabywa od różnych dostawców tj. hurtowników i producentów. Klientami Firmy są osoby i inne firmy. 
-                        </p>
-                        <div class="flex justify-between items-center text-sm">
-                            <a href="sql1.html" target="_blank"
-                                class="text-blue-500 hover:text-blue-700 font-medium transition duration-300">Zobacz
-                                projekt
-                            </a>
-                            <a href="https://github.com/PiotrDlubak/projekt_bazodanowy" target="_blank"
-                                class="text-gray-500 hover:text-gray-700 font-medium transition duration-300">Pliki projektu</a>
                         </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="bi.jpg" alt="Ikona lub grafika Business Intelligence" class="project-image">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Business Intelligence</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                    Autorski projekt z zakresu Business Intelligence dla przykładowej firmy specjalizującej się w sprzedaży ekologicznych 
-                    produktów spożywczych w małych sklepach osiedlowych. 
-                     Omówione są wymagania dotyczące nowego rozwiązania, w tym niski koszt i łatwa integracja z
-                      istniejącym systemem, a także oczekiwane rodzaje analiz i raportów. 
-                      Wybór padł na Power BI Desktop. Opisano również proces przekształcenia danych do optymalnego modelu gwiazdy oraz zdefiniowane miary analityczne w języku DAX, umożliwiające szczegółowe monitorowanie działalności firmy.
-                        </p>
-                        <div class="flex justify-between items-center text-sm">
-                            <a href="bi1.html" target="_blank"
-                                class="text-blue-500 hover:text-blue-700 font-medium transition duration-300">Zobacz
-                                projekt</a>
-                            <a href="https://github.com/PiotrDlubak/Business-Intelligence" target="_blank"
-                                class="text-gray-500 hover:text-gray-700 font-medium transition duration-300">pliki projektu</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="pre.jpg" alt="Grafika ilustrująca preprocessing danych w Python"
-                        class="project-image">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Preprocesing danych w Python</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            Autorski projekt  z zakresu analizy z elementami przekształcania, czyszczenia danych oraz inżynierii i selekcji cech.
-                            Opisuje sposoby, możliwości i techniki preprocesingu danych (przekształcania i czyszczenia danych), 
-                            inżynierii cech (feature engineering) oraz selekcji cech (feature selection) z użyciem biblioteki 
-                            (PANDAS, POLARS, RE) w języku Python. 
-                            W projekcie przedstawiono również przykłady zastosowania tych technik w praktyce,
-                            W projekcie wykorzystano również techniki wizualizacji danych, aby lepiej zrozumieć i przedstawić wyniki analizy.
-                        </p>
-                        <div class="flex justify-between items-center text-sm">
-                            <a href="preprocesing.html" target="_blank"
-                                class="text-blue-500 hover:text-blue-700 font-medium transition duration-300">Zobacz
-                                projekt</a>
-                            <a href="https://github.com/PiotrDlubak/Preprocesing-data-python" target="_blank"
-                                class="text-gray-500 hover:text-gray-700 font-medium transition duration-300">Pliki projektu</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="eda.jpg"
-                        alt="Wykresy lub grafika symbolizująca eksploracyjną analizę danych (EDA)"
-                        class="project-image">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Eksploracyjna analiza danych w Python [EDA]
-                        </h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            Autorski projekt z zakresu analizy danych z  elementami statystyki opisowej i matematycznej
-                            Ten dokument opisuje sposoby, możliwości i techniki analizowania danych z użytem technik
-                             eksploracyjnych i statystycznych z użyciem bibliotek python 
-                             (NUMPY, PANDAS, POLARS, SCIPY, MATH, STATMODELS, MATPLOTLIB, SEABORN, ALTAIR).
-                            W projekcie przedstawiono również przykłady zastosowania tych technik w praktyce,
-                            W projekcie wykorzystano również techniki wizualizacji danych, aby lepiej zrozumieć i przedstawić wyniki analizy.
-    
-                        </p>
-                        <div class="flex justify-between items-center text-sm">
-                            <a href="EDA.html" target="_blank"
-                                class="text-blue-500 hover:text-blue-700 font-medium transition duration-300">Zobacz Projekt</a>
-                            <a href="https://github.com/PiotrDlubak/EDA-data-python" target="_blank"
-                                class="text-gray-500 hover:text-gray-700 font-medium transition duration-300">Kod źródłowy</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="ml1.jpg" alt="Grafika reprezentująca model klasyfikacyjny uczenia maszynowego"
-                        class="project-image">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Uczenie maszynowe w python [ML] - model
-                            klasyfikacyjny</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            Ten dokument opisuje sposoby, możliwości i techniki tworzenia modeli klasyfikacji w uczeniu maszynowym.
-                            Znajdziesz tu informacje o różnych algorytmach klasyfikacji, ich zastosowaniu w praktycznym przykładzie.
-                            Przedstawione są również przykłady kodów w języku Python, które pokazują jak zaimplementować modele klasyfikacji.
-                            W projekcie wykorzystano również techniki wizualizacji danych, aby lepiej zrozumieć i przedstawić wyniki analizy.
-
-                            
-                        </p>
-                        <div class="flex justify-between items-center text-sm">
-                            <a href="EDA.html" target="_blank"
-                                class="text-blue-500 hover:text-blue-700 font-medium transition duration-300">Zobacz Projekt</a>
-                            <a href="https://github.com/PiotrDlubak/ML_Python_MultiModelsClassifier" target="_blank"
-                                class="text-gray-500 hover:text-gray-700 font-medium transition duration-300">Pliki projektu</a>
-                        </div>
-                    </div>
-                </article>
 
 
-                <article
-                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="ks.jpg" alt="Ikona lub grafika symbolizująca kurs SQL" class="project-image">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Kurs SQL</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            Autorski projekt kursu SQL, który obejmuje podstawowe zagadnienia związane z językiem SQL, 
-                            w tym tworzenie baz danych, tabele, relacje między tabelami oraz podstawowe operacje na danych.
-                        
-                            Kurs jest przeznaczony dla osób, które chcą nauczyć się podstaw SQL i zrozumieć, jak działa ten język w kontekście baz danych. Kurs zawiera również przykłady praktyczne oraz ćwiczenia do samodzielnego wykonania.
-                           <br>
-                            <br>
-                            <strong>Projekt w Budowie...................</strong>
-                        </p>
-                        <div class="flex justify-between items-center text-sm">
-                            <a href="#" target="_blank"
-                                class="text-blue-500 hover:text-blue-700 font-medium transition duration-300">Zobacz Projekt</a>
-                            <a href="#" target="_blank"
-                                class="text-gray-500 hover:text-gray-700 font-medium transition duration-300">Pliki projektu</a>
-                        </div>
-                    </div>
-                </article>
-
-
-
-            </div>
-        </section>
-
-
-        <section id="kontakt" class="py-16 bg-white rounded-lg shadow-lg mb-16 fade-in-section">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-semibold mb-8 text-gray-800">Skontaktuj się ze mną</h2>
-                <p class="text-gray-600 mb-10 max-w-2xl mx-auto">
-                    Jestem otwarty/a na nowe możliwości i współpracę.
-                    Jeśli masz pytania lub chciał(a)byś nawiązać kontakt, skorzystaj z
-                    poniższych opcji.
-                </p>
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                        <a href="mailto:twoj.email@example.com"
-                            class="hover:text-blue-500 transition duration-300">statystyk@o2.pl</a>
-                    </div>
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-6 h-6 mr-3 text-blue-500" fill="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
-                            </path>
-                        </svg>
-                        <a href="#" target="_blank" class="hover:text-blue-500 transition duration-300">Profil
-                            LinkedIn</a>
-                    </div>
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-6 h-6 mr-3 text-blue-500" fill="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.341-3.369-1.341-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.075 1.531 1.03 1.531 1.03.892 1.529 2.341 1.089 2.91.833.091-.647.349-1.086.635-1.337-2.22-.253-4.555-1.112-4.555-4.943 0-1.091.39-1.984 1.029-2.682-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.818c85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.698 1.028 1.591 1.028 2.682 0 3.841-2.339 4.686-4.566 4.935.359.309.678.92.678 1.856 0 1.337-.012 2.419-.012 2.746 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <a href="https://github.com/PiotrDlubak" target="_blank"
-                            class="hover:text-blue-500 transition duration-300">Profil GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
